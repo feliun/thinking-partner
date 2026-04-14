@@ -1,0 +1,99 @@
+# =============================================================================
+# Thinking Partner — Config Manifest
+# =============================================================================
+#
+# Config registry for the thinking-partner command suite.
+# The manifest-resolver skill reads this file to locate config files.
+#
+# Path tokens:
+#   $WORKSPACE  — the user's working directory (where Claude Code is running)
+#   ~           — the user's home directory
+#   (bare path) — relative to the plugin's own root directory
+#
+# The resolver expands tokens and checks paths in order (first match wins).
+# =============================================================================
+
+thinking-partner:
+  vault:
+    description: "Root directory of the user's Obsidian vault"
+    paths:
+      - $WORKSPACE
+      - ~/.claude/thinking-partner/vault
+    required: true
+    format: directory
+
+  thinking-style:
+    description: "How the user reasons — biases, decision framework, depth calibration"
+    paths:
+      - $WORKSPACE/system/principles/How to think with me.md
+      - references/thinking-style.md
+      - ~/.claude/thinking-partner/thinking-style.md
+    required: false
+    format: markdown
+
+  values:
+    description: "Core philosophy, objectives, boundaries"
+    paths:
+      - $WORKSPACE/system/principles/My values.md
+      - references/values.md
+      - ~/.claude/thinking-partner/values.md
+    required: false
+    format: markdown
+
+  identity:
+    description: "Background, role, domain, ventures"
+    paths:
+      - $WORKSPACE/system/principles/Who I am.md
+      - references/identity.md
+      - ~/.claude/thinking-partner/identity.md
+    required: false
+    format: markdown
+
+  work-style:
+    description: "Time philosophy, energy management, capacity constraints"
+    paths:
+      - $WORKSPACE/system/principles/How I work.md
+      - references/work-style.md
+      - ~/.claude/thinking-partner/work-style.md
+    required: false
+    format: markdown
+
+  writing-style:
+    description: "Voice, sentence patterns, banned phrases, formatting rules"
+    paths:
+      - $WORKSPACE/system/principles/Writing style.md
+      - references/writing-style.md
+      - ~/.claude/thinking-partner/writing-style.md
+    required: false
+    format: markdown
+
+  strategy-7-powers:
+    description: "Hamilton Helmer's 7 Powers framework reference"
+    paths:
+      - references/strategy-7-powers.md
+    required: false
+    format: markdown
+
+  weekly-reviews:
+    description: "Directory of weekly review files (used by /leverage)"
+    paths:
+      - $WORKSPACE/logs/weekly/
+      - $WORKSPACE/weekly/
+    required: false
+    format: directory
+
+  daily-notes:
+    description: "Directory of daily notes (used by /leverage)"
+    paths:
+      - $WORKSPACE/logs/daily/
+      - $WORKSPACE/daily/
+    required: false
+    format: directory
+
+  canvas-output:
+    description: "Where commands write .canvas files"
+    paths:
+      - $WORKSPACE/outputs/canvas/
+      - ~/Documents/thinking-partner/canvas/
+    required: false
+    format: directory

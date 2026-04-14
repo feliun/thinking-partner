@@ -1,0 +1,14 @@
+{
+  "name": "thinking-partner",
+  "owner": {
+    "name": "Felipe Polo",
+    "url": "https://github.com/feliun"
+  },
+  "plugins": [
+    {
+      "name": "thinking-partner",
+      "source": "./",
+      "version": "1.0.0"
+    }
+  ]
+}
