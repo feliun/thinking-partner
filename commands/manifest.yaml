@@ -25,8 +25,10 @@ thinking-partner:
   thinking-style:
     description: "How the user reasons — biases, decision framework, depth calibration"
     paths:
-      - $WORKSPACE/system/principles/How to think with me.md
+      - $WORKSPACE/.thinking-partner/thinking-style.md
       - references/thinking-style.md
+      # Optional: legacy author-vault layout (kept for backward compatibility)
+      - $WORKSPACE/system/memory/principles/How to think with me.md
       - ~/.claude/thinking-partner/thinking-style.md
     required: false
     format: markdown
@@ -34,8 +36,10 @@ thinking-partner:
   values:
     description: "Core philosophy, objectives, boundaries"
     paths:
-      - $WORKSPACE/system/principles/My values.md
+      - $WORKSPACE/.thinking-partner/values.md
       - references/values.md
+      # Optional: legacy author-vault layout (kept for backward compatibility)
+      - $WORKSPACE/system/memory/principles/My values.md
       - ~/.claude/thinking-partner/values.md
     required: false
     format: markdown
@@ -43,8 +47,10 @@ thinking-partner:
   identity:
     description: "Background, role, domain, ventures"
     paths:
-      - $WORKSPACE/system/principles/Who I am.md
+      - $WORKSPACE/.thinking-partner/identity.md
       - references/identity.md
+      # Optional: legacy author-vault layout (kept for backward compatibility)
+      - $WORKSPACE/system/memory/principles/Who am I.md
       - ~/.claude/thinking-partner/identity.md
     required: false
     format: markdown
@@ -52,8 +58,10 @@ thinking-partner:
   work-style:
     description: "Time philosophy, energy management, capacity constraints"
     paths:
-      - $WORKSPACE/system/principles/How I work.md
+      - $WORKSPACE/.thinking-partner/work-style.md
       - references/work-style.md
+      # Optional: legacy author-vault layout (kept for backward compatibility)
+      - $WORKSPACE/system/memory/principles/How I work.md
       - ~/.claude/thinking-partner/work-style.md
     required: false
     format: markdown
@@ -61,8 +69,10 @@ thinking-partner:
   writing-style:
     description: "Voice, sentence patterns, banned phrases, formatting rules"
     paths:
-      - $WORKSPACE/system/principles/Writing style.md
+      - $WORKSPACE/.thinking-partner/writing-style.md
       - references/writing-style.md
+      # Optional: legacy author-vault layout (kept for backward compatibility)
+      - $WORKSPACE/system/memory/principles/Writing style.md
       - ~/.claude/thinking-partner/writing-style.md
     required: false
     format: markdown

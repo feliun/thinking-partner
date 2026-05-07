@@ -31,7 +31,7 @@ Not a coach, consultant, or assistant — the voice that says "have you consider
 - **[Obsidian](https://obsidian.md)** — your notes must live in an Obsidian vault.
 - **Obsidian CLI plugin** — commands depend on `obsidian search`, `obsidian orphans`, `obsidian backlinks`, `obsidian tags`, `obsidian files`. Install from the Obsidian community plugin directory and ensure the `obsidian` binary is on your `$PATH`.
 - **Obsidian must be running** when you use the commands (the CLI talks to the live app).
-- **Optional:** the `obsidian:json-canvas` skill if you want `.canvas` visual outputs.
+- **Required for `/ideas` and `/leverage` commands:** the `obsidian:json-canvas` skill (used to generate `.canvas` visual outputs). Other commands work without it.
 
 ## Installation
 
@@ -51,10 +51,12 @@ The resolver checks paths in order; first match wins. Override any default by pl
 
 ### Reference files (calibrate the partner to you)
 
-The plugin ships samples in `references/`. Replace them with your own by either:
+The plugin ships samples in `references/`. Replace them with your own by placing customized versions in any of:
 
-- placing customized versions at your vault root (`$WORKSPACE/thinking-style.md`, etc.) — recommended, keeps personal content with your notes
-- or at `~/.claude/thinking-partner/` — keeps personal content out of the vault
+- **`$WORKSPACE/.thinking-partner/<file>.md`** (recommended) — keeps personal content scoped to the plugin, inside your vault
+- **`~/.claude/thinking-partner/<file>.md`** — keeps personal content out of the vault entirely (useful if you use the plugin across multiple vaults)
+
+The resolver checks paths in priority order; first match wins. Plugin-shipped samples in `references/` are the fallback so commands work out of the box.
 
 | File | Why it matters |
 |------|----------------|
